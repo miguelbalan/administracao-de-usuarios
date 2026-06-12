@@ -35,6 +35,12 @@ function addUser(name, position, permission) {
     `);
 }
 
+button = document.getElementById("button-add-user");
+
+button.addEventListener("click", function () {
+    alert("Button clicked!");
+});
+
 getUser().then(userArray => {
     userArray.forEach(element => {
         addUser(
