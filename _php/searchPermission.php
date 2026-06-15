@@ -10,7 +10,7 @@ try{
 
     $resp = $stm->fetchAll(PDO::FETCH_ASSOC);
     
-    $limit = 0;
+    $limit = count($resp);
     for ($i = 0; $i < count($resp); $i += 1){
         if ($resp[$i]["id"] > $_SESSION['permission_lvl']){
             $limit = $i;
