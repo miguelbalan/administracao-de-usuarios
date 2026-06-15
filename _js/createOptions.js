@@ -1,6 +1,6 @@
 import { searchPermission } from "./_api/searchPermission.js";
 
-let dropDown = document.getElementById("permission-options");
+let dropDown = document.getElementById("input-permission");
 
 searchPermission().then(objPermission => {
     objPermission.forEach(element => {

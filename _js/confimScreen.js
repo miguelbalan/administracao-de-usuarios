@@ -1,4 +1,4 @@
-export async function showCustomConfirm() {
+export async function showDeleteConfirm() {
   return new Promise((resolve) => {
     const modal = document.getElementById('custom-modal');
     modal.style.display = 'flex';

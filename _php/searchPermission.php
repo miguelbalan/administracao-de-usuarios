@@ -10,7 +10,15 @@ try{
 
     $resp = $stm->fetchAll(PDO::FETCH_ASSOC);
     
-    echo json_encode($resp);
+    $limit = 0;
+    for ($i = 0; $i < count($resp); $i += 1){
+        if ($resp[$i]["id"] > $_SESSION['permission_lvl']){
+            $limit = $i;
+            break;
+        }
+    }
+    
+    echo json_encode(array_slice($resp, 0, $limit));
 } catch(PDOException $e){
     echo $e->getMessage();
 }

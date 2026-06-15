@@ -1,10 +1,17 @@
 <?php
 require "conect.php";
 
-$name = $_POST['name'];
-$pwd = $_POST['pwd'];
-$position = $_POST['position'];
-$permission = intval($_POST['permission-options']);
+$name = $_GET['name'];
+$pwd = $_GET['pwd'];
+$position = $_GET['position'];
+$permission = intval($_GET['permission']);
+
+if ($_SESSION["permission_lvl"] == 1){
+    return json_encode([
+        "message" => "Permission Level too low",
+        "code" => 400
+    ]);
+}
 
 try {
     if ($permission > $_SESSION["permission_lvl"]) {

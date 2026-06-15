@@ -3,6 +3,13 @@ require "conect.php";
 
 $id = intval($_GET['id']);
 
+if ($_SESSION["permission_lvl"] == 1){
+    return json_encode([
+        "message" => "Permission Level too low",
+        "code" => 400
+    ]);
+}
+
 try {
     $query = "DELETE FROM users WHERE id = :id AND permission <= :permission_lvl";
     $stm = $conn->prepare($query);
