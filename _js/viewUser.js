@@ -1,8 +1,9 @@
 import { getUser } from "./_api/getUser.js";
+import { searchPermission } from "./_api/searchPermission.js";
 
-function addUser(name, position, permission) {
-    const userList = document.querySelector('.user-list');
+const userList = document.querySelector('.user-list');
 
+function addUser(id, name, position, permission) {
     userList.insertAdjacentHTML('afterbegin', `
     <li class="user-entry">
         <div class="text-entry">
@@ -23,24 +24,40 @@ function addUser(name, position, permission) {
         </div>
 
         <div class="buttons">
-            <div class="update-button">
+            <div id="${id}" class="update-button">
                 <img class="icon" src="_assets/lapis.png">
             </div>
 
-            <div class="delete-button">
+            <div id="${id}" class="delete-button">
                 <img class="icon" src="_assets/remover-usuario.png">
             </div>
         </div>
     </li>
     `);
-}   
+}
 
-getUser().then(userArray => {
+export async function updateView() {
+    userList.innerHTML = `<li id="button-add-user" class="add-user" >
+                    <a  id="button-add-user" class="add-user" style="width: 100%; height: 100%; color: gray;">+</a>
+                </li>`;
+    
+    let userArray = await getUser();
+    let permissionArray = await searchPermission();
+
+    let permission_table = {}
+    permissionArray.forEach(element => {
+        permission_table[element["id"]] = element["name"]
+    })
+
     userArray.forEach(element => {
         addUser(
+            element["id"],
             element["name"],
             element["position"],
-            element["permission"]
+            permission_table[element["permission"]]
         );
     });
-});
+
+    return true;
+}
+

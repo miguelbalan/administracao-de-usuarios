@@ -14,24 +14,32 @@
 
     <link rel="stylesheet" href="_css/main.css">
     <link rel="stylesheet" href="_css/navbar.css">
-    <link rel="stylesheet" href="_css/usercontent.css">
+    <link rel="stylesheet" href="_css/login.css">
+    <link rel="stylesheet" href="_css/confirmscreen.css">
 </head>
 
 <body>
-    <div class="navbar">
-        <p class="title">Tabela de Usuários</p>
-    </div>
-    <div class="main-container">
-        <div class="user-container">
-            <ul class="user-list">
-                <li id="button-add-user" class="add-user">
-                    <p style="color: gray;">+</p>
-                </li>
-            </ul>
+    <div id="custom-modal" class="modal-overlay">
+        <div class="modal-content">
+            <p>Usuário ou senha incorretos</p>
+            <a id="btn-confirm" class="btn-confirm">Ok</a>
         </div>
     </div>
-</body>
 
-<script type="module" src="_js/viewUser.js"></script>
+    <div class="navbar">
+        <p class="title">Login</p>
+    </div>
+    <div class="main-container">
+        <form class="login-container" action="_php/login.php" method="post">
+            <p class="login-label">Entrar na sua Conta</p>
+            <div class="input-container">
+                <input name="user" type="text" placeholder="Nome de usuário" required />
+                <input name="pwd" type="password" placeholder="Senha" required />
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+
+    </div>
+</body>
 
 </html>

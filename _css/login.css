@@ -1,0 +1,53 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 5% 0 0 0;
+    padding: 1vw;
+    
+    width: 30vw;
+    height: 30vw;
+
+    justify-content: space-between;
+    align-self: center;
+
+    border-radius: 1vw;
+    border-style: solid;
+    border-color: gray;
+    border-width: 0.01vw;
+}
+
+.login-label {
+    text-align: center;
+    margin-top: 2vw;
+    font-size: 1.5vw;
+}
+
+.input-container {
+    width: 100%;
+}
+
+input[type="text"], input[type="password"] {
+    all: unset;
+
+    width: calc(100% - 2vw);
+
+    margin-top: 1vw;
+    padding: 1vw;
+
+    border-radius: 0.5vw;
+    border-style: solid;
+    border-color: gray;
+    border-width: 0.01vw;
+}
+
+button[type="submit"]{
+    all: unset;
+
+    text-align: center;
+    cursor: pointer;
+    padding: 1vw;
+
+    background-color:  rgb(40, 227, 62);
+    border-radius: 0.5vw;
+}

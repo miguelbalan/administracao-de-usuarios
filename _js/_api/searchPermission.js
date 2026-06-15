@@ -1,7 +1,7 @@
 let api = location.protocol + "//localhost/administracao-de-usuarios/_php/";
 
-export async function getUser(){
-    let resp = await fetch(api + "getUsers.php");
+export async function searchPermission(id){
+    let resp = await fetch(api + "searchPermission.php");
 
     if (!resp.ok){
         return false;
