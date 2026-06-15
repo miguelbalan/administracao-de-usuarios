@@ -3,11 +3,12 @@ require "conect.php";
 
 $id = intval($_GET['id']);
 
-if ($_SESSION["permission_lvl"] == 1){
-    return json_encode([
+if ($_SESSION["permission_lvl"] == 1) {
+    echo json_encode([
         "message" => "Permission Level too low",
         "code" => 400
     ]);
+    return;
 }
 
 try {
@@ -20,16 +21,16 @@ try {
     $resp = $stm->execute();
 
     if ($resp == true) {
-        return json_encode([
+        echo json_encode([
             "message" => "Delete Successful",
             "code" => 200
         ]);
+    } else {
+        echo json_encode([
+            "message" => "Delete Failed",
+            "code" => 400
+        ]);
     }
-
-    return json_encode([
-        "message" => "Delete Failed",
-        "code" => 400
-    ]);
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

@@ -6,4 +6,6 @@ export async function createUser(name, pwd, position, permission) {
     if (!resp.ok) {
         return false;
     }
+
+    return resp.json();
 }

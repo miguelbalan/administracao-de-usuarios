@@ -6,16 +6,17 @@ $pwd = $_GET['pwd'];
 $position = $_GET['position'];
 $permission = intval($_GET['permission']);
 
-if ($_SESSION["permission_lvl"] == 1){
-    return json_encode([
+if ($_SESSION["permission_lvl"] == 1) {
+    echo json_encode([
         "message" => "Permission Level too low",
         "code" => 400
     ]);
+    return;
 }
 
 try {
     if ($permission > $_SESSION["permission_lvl"]) {
-        return json_encode([
+        echo json_encode([
             "message" => "Create Failed",
             "code" => 400
         ]);
@@ -32,16 +33,16 @@ try {
     $resp = $stm->execute();
 
     if ($resp == true) {
-        return json_encode([
+        echo json_encode([
             "message" => "Create Successful",
             "code" => 200
         ]);
+    } else {
+        echo json_encode([
+            "message" => "Create Failed",
+            "code" => 400
+        ]);
     }
-
-    return json_encode([
-        "message" => "Create Failed",
-        "code" => 400
-    ]);
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

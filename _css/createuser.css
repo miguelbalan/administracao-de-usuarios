@@ -14,12 +14,6 @@
     z-index: 9999;
 }
 
-.create-label {
-    text-align: center;
-    margin-bottom: 2vw;
-    font-size: 1.5vw;
-}
-
 .create-modal {
     display: flex;
     flex-direction: column;
@@ -29,12 +23,17 @@
 
     padding: 1vw;
 
-    width: 30vw;
-    height: 30vw;
+    width: 26vw;
+    height: 26vw;
 
     background: white;
 
     border-radius: 1rem;
+}
+
+.create-label {
+    text-align: center;
+    font-size: 1.5vw;
 }
 
 .create-button {
@@ -42,7 +41,20 @@
     cursor: pointer;
     padding: 1vw;
 
+    width: 40%;
+
     background-color: rgb(40, 227, 62);
+    border-radius: 0.5vw;
+}
+
+.close-button {
+    text-align: center;
+    cursor: pointer;
+    padding: 1vw;
+
+    width: 40%;
+
+    background-color: rgb(255, 47, 47);
     border-radius: 0.5vw;
 }
 
@@ -75,12 +87,20 @@
     width: 100%;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    
+    width: 100%;
+}
+
 select {
     all: unset;
 
     width: calc(100% - 2vw);
 
     text-transform: capitalize;
+    text-align: left;
 
     margin-top: 1vw;
     padding: 1vw;

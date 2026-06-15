@@ -7,6 +7,8 @@ export function buttonFunctionality() {
     let deleteButton = document.getElementsByClassName("delete-button");
     let createButton = document.getElementById("button-add-user");
     let submitButton = document.getElementById("create-button");
+    let closeButton = document.getElementById("close-button");
+
 
     submitButton.addEventListener("click", function () {
         const modal = document.getElementById('create-modal');
@@ -22,8 +24,12 @@ export function buttonFunctionality() {
         }
 
         createUser(inputName, inputPwd, inputPosition, inputPermission).then(resp => {
-            modal.style.display = 'none'
-            location.reload()
+            if (resp["code"] == 200) {
+                modal.style.display = 'none'
+                location.reload()
+            } else {
+                alert(resp["message"])
+            }
         });
     });
 
@@ -31,6 +37,11 @@ export function buttonFunctionality() {
         const modal = document.getElementById('create-modal');
         modal.style.display = 'flex';
     });
+
+    closeButton.addEventListener("click", function () {
+        const modal = document.getElementById('create-modal');
+        modal.style.display = 'none';
+    })
 
     let i = 0;
     while (true) {
@@ -47,6 +58,10 @@ export function buttonFunctionality() {
                 deleteUser(currButton["id"]).then(resp => {
                     if (resp == false) {
                         alert("Failed Request");
+                    }
+
+                    if (resp["code"] != 200) {
+                        alert(resp["message"]);
                     }
                     location.reload();
                 });
