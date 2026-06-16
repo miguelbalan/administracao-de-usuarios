@@ -1,5 +1,5 @@
-import { getUser } from "./_api/getUser.js";
-import { searchPermission } from "./_api/searchPermission.js";
+import { getUser } from "../modules/users/getUser.js";
+import { searchPermission } from "../modules/permissions/searchPermission.js";
 
 const userList = document.querySelector('.user-list');
 
@@ -25,11 +25,11 @@ function addUser(id, name, position, permission) {
 
         <div class="buttons">
             <div id="${id}" class="update-button">
-                <img class="icon" src="_assets/lapis.png">
+                <img class="icon" src="src/assets/icons/lapis.png">
             </div>
 
             <div id="${id}" class="delete-button">
-                <img class="icon" src="_assets/remover-usuario.png">
+                <img class="icon" src="src/assets/icons/remover-usuario.png">
             </div>
         </div>
     </li>

@@ -1,5 +1,5 @@
 <?php
-require "conect.php";
+require "../../database/connect.php";
 
 $name = $_GET['name'];
 $pwd = $_GET['pwd'];

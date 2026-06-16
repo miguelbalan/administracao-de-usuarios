@@ -1,7 +1,7 @@
 <?php
-require "conect.php";
+require "../../database/connect.php";
 
-try{
+try {
     $query = "SELECT * FROM users WHERE permission <= :permission_lvl";
 
     $stm = $conn->prepare($query);
@@ -10,8 +10,8 @@ try{
     $stm->execute();
 
     $resp = $stm->fetchAll(PDO::FETCH_ASSOC);
-    
+
     echo json_encode($resp);
-} catch(PDOException $e){
+} catch (PDOException $e) {
     echo $e->getMessage();
 }

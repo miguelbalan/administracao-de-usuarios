@@ -1,6 +1,6 @@
-import { createUser } from "./_api/createUser.js";
-import { deleteUser } from "./_api/deleteUser.js";
-import { updateUser } from "./_api/updateUser.js";
+import { createUser } from "../modules/users/createUser.js";
+import { deleteUser } from "../modules/users/deleteUser.js";
+import { updateUser } from "../modules/users/updateUser.js";
 
 import { updateView } from "./viewUser.js";
 

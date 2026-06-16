@@ -12,10 +12,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="_css/main.css">
-    <link rel="stylesheet" href="_css/navbar.css">
-    <link rel="stylesheet" href="_css/login.css">
-    <link rel="stylesheet" href="_css/confirmscreen.css">
+    <link rel="stylesheet" href="src/css/global/main.css">
+    <link rel="stylesheet" href="src/css/global/navbar.css">
+    <link rel="stylesheet" href="src/css/pages/login.css">
 </head>
 
 <body>
@@ -23,7 +22,7 @@
         <p class="title">Login</p>
     </div>
     <div class="main-container">
-        <form class="login-container" action="_php/login.php" method="post">
+        <form class="login-container" action="backend/php/login/login.php" method="post">
             <p class="login-label">Entrar na sua Conta</p>
             <div class="input-container">
                 <input name="user" type="text" placeholder="Nome de usuário" required />

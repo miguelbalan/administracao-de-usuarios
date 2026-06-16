@@ -1,5 +1,5 @@
 <?php
-require "conect.php";
+require "../../database/connect.php";
 
 $user_id = $_GET['id'];
 $name = $_GET['name'];
@@ -35,7 +35,7 @@ try {
 
     $stm->execute();
 
-    $count = $stm->rowCount(); 
+    $count = $stm->rowCount();
 
     if ($count > 0) {
         echo json_encode([

@@ -1,4 +1,4 @@
-import { searchPermission } from "./_api/searchPermission.js";
+import { searchPermission } from "../modules/permissions/searchPermission.js";
 
 let createDropDown = document.getElementById("create-input-permission");
 let updateDropDown = document.getElementById("update-input-permission");

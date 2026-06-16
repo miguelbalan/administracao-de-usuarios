@@ -1,5 +1,5 @@
 <?php
-require "conect.php";
+require "../../database/connect.php";
 
 $id = intval($_GET['id']);
 

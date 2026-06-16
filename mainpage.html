@@ -12,17 +12,17 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="_css/main.css">
-    <link rel="stylesheet" href="_css/navbar.css">
-    <link rel="stylesheet" href="_css/usercontent.css">
-    <link rel="stylesheet" href="_css/createuser.css">
-    <link rel="stylesheet" href="_css/updateuser.css">
-    <link rel="stylesheet" href="_css/confirmscreen.css">
+    <link rel="stylesheet" href="src/css/global/main.css">
+    <link rel="stylesheet" href="src/css/global/navbar.css">
+    <link rel="stylesheet" href="src/css/pages/usercontent.css">
+    <link rel="stylesheet" href="src/css/components/createuser.css">
+    <link rel="stylesheet" href="src/css/components/updateuser.css">
+    <link rel="stylesheet" href="src/css/components/deleteuser.css">
 </head>
 
 <body>
-    <div id="delete-modal" class="modal-overlay">
-        <div class="modal-content">
+    <div id="delete-modal" class="delete-overlay">
+        <div class="delete-container">
             <p>Deseja excluir esse usuário?</p>
             <a id="btn-confirm" class="btn-confirm">Sim</a>
             <a id="btn-cancel" class="btn-cancel">Não</a>
@@ -81,7 +81,7 @@
         <p class="title">Tabela de Usuários</p>
         <div>
             <a class="login-button" href="index.html">Login</a>
-            <a class="logout-button" href="_php/logout.php">Logout</a>
+            <a class="logout-button" href="backend/php/login/logout.php">Logout</a>
         </div>
     </div>
     <div class="main-container">
@@ -97,7 +97,7 @@
     </div>
 </body>
 
-<script type="module" src="_js/main.js"></script>
-<script type="module" src="_js/createOptions.js"></script>
+<script type="module" src="src/js/main.js"></script>
+<script type="module" src="src/js/components/createOptions.js"></script>
 
 </html>
