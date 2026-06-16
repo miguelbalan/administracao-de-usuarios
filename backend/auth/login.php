@@ -1,5 +1,5 @@
 <?php
-require "../../database/connect.php";
+require "../database/connect.php";
 
 $user = $_POST["user"];
 $pwd = $_POST["pwd"];
@@ -18,11 +18,11 @@ try {
     if ($resp) {
         $_SESSION["user_id"] = $resp[0]["id"];
         $_SESSION["permission_lvl"] = intval($resp[0]["permission"]);
-        header("Location: ../../../mainpage.html");
+        header("Location: ../../mainpage.html");
     } else {
-        header("Location: ../../../index.html");
+        header("Location: ../../index.html");
     }
 } catch (PDOException $e) {
     echo $e->getMessage();
-    header("Location: ../../../index.html");
+    header("Location: ../../index.html");
 }

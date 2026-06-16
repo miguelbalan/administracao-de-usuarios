@@ -1,4 +1,4 @@
-let api = location.protocol + "//localhost/administracao-de-usuarios/backend/php/users/";
+let api = location.protocol + "//localhost/administracao-de-usuarios/backend/users/";
 
 export async function updateUser(id, name, pwd, position, permission) {
     let resp = await fetch(api + `updateUser.php?id=${id}&name=${name}&pwd=${pwd}&position=${position}&permission=${permission}`);

@@ -1,5 +1,5 @@
 <?php
-require "../../database/connect.php";
+require "../database/connect.php";
 
 $user_id = $_GET['id'];
 $name = $_GET['name'];

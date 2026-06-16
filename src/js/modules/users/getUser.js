@@ -1,4 +1,4 @@
-let api = location.protocol + "//localhost/administracao-de-usuarios/backend/php/users/";
+let api = location.protocol + "//localhost/administracao-de-usuarios/backend/users/";
 
 export async function getUser() {
     let resp = await fetch(api + "getUsers.php");

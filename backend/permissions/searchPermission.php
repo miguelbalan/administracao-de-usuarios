@@ -1,5 +1,5 @@
 <?php
-require "../../database/connect.php";
+require "../database/connect.php";
 
 try {
     $query = "SELECT id, name FROM permission_reference";

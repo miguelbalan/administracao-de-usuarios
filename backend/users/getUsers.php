@@ -1,5 +1,5 @@
 <?php
-require "../../database/connect.php";
+require "../database/connect.php";
 
 try {
     $query = "SELECT * FROM users WHERE permission <= :permission_lvl";
