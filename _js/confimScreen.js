@@ -1,6 +1,6 @@
 export async function showDeleteConfirm() {
   return new Promise((resolve) => {
-    const modal = document.getElementById('custom-modal');
+    const modal = document.getElementById('delete-modal');
     modal.style.display = 'flex';
 
     document.getElementById('btn-confirm').addEventListener("click", function () {

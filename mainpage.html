@@ -16,15 +16,40 @@
     <link rel="stylesheet" href="_css/navbar.css">
     <link rel="stylesheet" href="_css/usercontent.css">
     <link rel="stylesheet" href="_css/createuser.css">
+    <link rel="stylesheet" href="_css/updateuser.css">
     <link rel="stylesheet" href="_css/confirmscreen.css">
 </head>
 
 <body>
-    <div id="custom-modal" class="modal-overlay">
+    <div id="delete-modal" class="modal-overlay">
         <div class="modal-content">
             <p>Deseja excluir esse usuário?</p>
             <a id="btn-confirm" class="btn-confirm">Sim</a>
             <a id="btn-cancel" class="btn-cancel">Não</a>
+        </div>
+    </div>
+
+    <div id="update-modal" class="update-overlay">
+        <div class="update-modal">
+            <p class="update-label">Alterar Dados</p>
+
+            <div class="input-container">
+                <input id="update-input-name" name="name" type="text" placeholder="Nome de usuário" />
+                <input id="update-input-pwd" name="pwd" type="password" placeholder="Senha" />
+                <input id="update-input-position" name="position" type="text" placeholder="Cargo Atual" />
+
+                <select name="permission-options" id="update-input-permission">
+                </select>
+            </div>
+
+            <div class="button-container">
+                <div id="submit-update-button" class="submit-update-button">
+                    <p>Alterar</p>
+                </div>
+                <div id="close-update-button" class="close-button">
+                    <p>Fechar</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -33,19 +58,19 @@
             <p class="create-label">Criar um Usuário</p>
 
             <div class="input-container">
-                <input id="input-name" name="name" type="text" placeholder="Nome de usuário" />
-                <input id="input-pwd" name="pwd" type="password" placeholder="Senha" />
-                <input id="input-position" name="position" type="text" placeholder="Cargo Atual" />
+                <input id="create-input-name" name="name" type="text" placeholder="Nome de usuário" />
+                <input id="create-input-pwd" name="pwd" type="password" placeholder="Senha" />
+                <input id="create-input-position" name="position" type="text" placeholder="Cargo Atual" />
 
-                <select name="permission-options" id="input-permission">
+                <select name="permission-options" id="create-input-permission">
                 </select>
             </div>
 
             <div class="button-container">
-                <div id="create-button" class="create-button">
+                <div id="submit-create-button" class="submit-create-button">
                     <p>Criar</p>
                 </div>
-                <div id="close-button" class="close-button">
+                <div id="close-create-button" class="close-button">
                     <p>Fechar</p>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-.create-overlay {
+.update-overlay {
     position: fixed;
 
     display: none;
@@ -14,7 +14,7 @@
     z-index: 9999;
 }
 
-.create-modal {
+.update-modal {
     display: flex;
     flex-direction: column;
 
@@ -31,12 +31,12 @@
     border-radius: 1rem;
 }
 
-.create-label {
+.update-label {
     text-align: center;
     font-size: 1.5vw;
 }
 
-.submit-create-button {
+.submit-update-button {
     text-align: center;
     cursor: pointer;
     padding: 1vw;
@@ -47,7 +47,7 @@
     border-radius: 0.5vw;
 }
 
-.close-button {
+.close-update-button {
     text-align: center;
     cursor: pointer;
     padding: 1vw;
@@ -58,7 +58,7 @@
     border-radius: 0.5vw;
 }
 
-.create-container {
+.update-container {
     display: flex;
     flex-direction: column;
 
@@ -77,7 +77,7 @@
     border-width: 0.01vw;
 }
 
-.create-label {
+.update-label {
     text-align: center;
     margin-top: 2vw;
     font-size: 1.5vw;
