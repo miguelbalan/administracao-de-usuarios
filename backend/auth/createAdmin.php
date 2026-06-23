@@ -1,13 +1,12 @@
 <?php
 require "../database/connect.php";
 
-$user_id = $_GET['id'];
-$name = $_GET['name'];
-$pwd = password_hash($_GET['pwd'], null);
-$position = $_GET['position'];
-$permission = intval($_GET['permission']);
+$name = 'admin';
+$pwd = password_hash('12345', null);
+$position = 'Administrador de Dashboard';
+$permission = intval(4);
 
-if ($_SESSION["permission_lvl"] == 1) {
+if (4 == 1) {
     echo json_encode([
         "message" => "Permission Level too low",
         "code" => 400
@@ -16,14 +15,14 @@ if ($_SESSION["permission_lvl"] == 1) {
 }
 
 try {
-    if ($permission > $_SESSION["permission_lvl"]) {
+    if ($permission > 4) {
         echo json_encode([
-            "message" => "Update Failed",
+            "message" => "Create Failed",
             "code" => 400
         ]);
     }
 
-    $query = "UPDATE users SET name = :name, pwd = :pwd, position = :position, permission = :permission WHERE id = :id";
+    $query = "INSERT INTO users(name, pwd, position, permission) VALUES(:name, :pwd, :position, :permission)";
     $stm = $conn->prepare($query);
 
     $stm->bindParam(":name", $name);
@@ -31,20 +30,16 @@ try {
     $stm->bindParam(":position", $position);
     $stm->bindParam(":permission", $permission);
 
-    $stm->bindParam(":id", $user_id);
+    $resp = $stm->execute();
 
-    $stm->execute();
-
-    $count = $stm->rowCount();
-
-    if ($count > 0) {
+    if ($resp == true) {
         echo json_encode([
-            "message" => "Update Successful",
+            "message" => "Create Successful",
             "code" => 200
         ]);
     } else {
         echo json_encode([
-            "message" => "Update Failed",
+            "message" => "Create Failed",
             "code" => 400
         ]);
     }

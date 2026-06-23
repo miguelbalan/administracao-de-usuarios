@@ -24,5 +24,3 @@ CREATE TABLE IF NOT EXISTS `users` (
   FOREIGN KEY (`permission`) REFERENCES `permission_reference`(`id`)
 );
 
-INSERT INTO `users` (`id`, `name`, `pwd`, `position`, `permission`) VALUES
-  (1, 'admin', '12345', 'Admin', 4)

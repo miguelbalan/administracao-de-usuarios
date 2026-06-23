@@ -2,7 +2,7 @@
 require "../database/connect.php";
 
 $name = $_GET['name'];
-$pwd = $_GET['pwd'];
+$pwd = password_hash($_GET['pwd'], null);
 $position = $_GET['position'];
 $permission = intval($_GET['permission']);
 
